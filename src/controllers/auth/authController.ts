@@ -1,9 +1,10 @@
-import * as express from 'express';
-import * as jwt from 'jsonwebtoken';
+import express from 'express';
 import AuthRepository from '../../repositories/auth/authRepository';
 import * as secret from '../../config/auth/jwt/sercret'
 import checkJWT from '../../middlewares/checkJwt'
-import AuthService from "../../services/auth/authService";
+import AuthService from '../../services/auth/authService';
+import jwt from 'jsonwebtoken';
+
 
 
 class AuthController {

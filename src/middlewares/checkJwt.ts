@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
-import * as jwt from 'jsonwebtoken';
-import * as config from '../config/auth/jwt/sercret'
+import * as config from '../config/auth/jwt/sercret';
+import jwt from 'jsonwebtoken';
 
 
 const checkJwt = function(req: Request, res: Response, next: NextFunction) {
