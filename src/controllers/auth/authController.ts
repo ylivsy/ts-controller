@@ -19,6 +19,7 @@ class AuthController {
     }
 
     private intializeRoutes() {
+        this.router.get(`/health`, this.health);
         this.router.post(`${this.path}/login`, this.login);
         this.router.post(`${this.path}/signup`, this.signup);
 
@@ -75,6 +76,10 @@ class AuthController {
 
     private signout = (request: express.Request, response: express.Response) => {
         return response.status(204).send();
+    }
+
+    private health = (request: express.Request, response: express.Response) => {
+        return response.status(200).send();
     }
 }
 

@@ -11,14 +11,16 @@ class AddressController {
     }
 
     private intializeRoutes() {
-        this.router.post(`${this.path}/create`, checkJWT , this.createAddress);
-        this.router.post(`${this.path}/autocomplete`, checkJWT , this.autocomplete);
-        this.router.post(`${this.path}/updateAddress`, checkJWT , this.updateAddress);
-        this.router.post(`${this.path}/getAddress`, checkJWT , this.getAddress);
-        this.router.post(`${this.path}/deleteAddress`, checkJWT , this.deleteAddressById);
-        this.router.post(`${this.path}/getAddresses`, checkJWT , this.getAddresses);
-        this.router.post(`${this.path}/validate`, checkJWT , this.validate);
-        this.router.post(`${this.path}/zipValidate`, checkJWT , this.zipValidate);
+        this.router.post(`${this.path}/addresses`, checkJWT , this.createAddress);
+        this.router.put(`${this.path}/addresses`, checkJWT , this.updateAddress);
+        this.router.get(`${this.path}/addresses`, checkJWT , this.getAddress);
+
+        this.router.delete(`${this.path}/addresses`, checkJWT , this.deleteAddressById);
+        this.router.get(`${this.path}/addresses`, checkJWT , this.getAddresses);
+        this.router.post(`${this.path}/find-address`, checkJWT , this.zipValidate);
+
+        this.router.post(`${this.path}/autocomplete-address` , this.autocomplete);
+        this.router.post(`${this.path}/validate-address` , this.validate);
     }
 
     private createAddress = (request: express.Request, response: express.Response) => {
